@@ -128,22 +128,48 @@ export default async function decorate(block) {
   const navBrand = nav.querySelector('.nav-brand');
   const brandLink = navBrand.querySelector('.button');
   if (brandLink) {
-    brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
+    brandLink.className = "";
+    brandLink.closest(".button-container").className = "";
+    brandLink.textContent = "";
+    brandLink.innerHTML = `<img src="icons/logo.svg" alt="Logo" />`;
   }
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-      navSection.addEventListener('click', () => {
-        if (isDesktop.matches) {
-          const expanded = navSection.getAttribute('aria-expanded') === 'true';
-          toggleAllNavSections(navSections);
-          navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        }
+    const categoryImages = navSections.querySelectorAll(
+      ".default-content-wrapper > p"
+    );
+
+    navSections
+      .querySelectorAll(":scope .default-content-wrapper > ul > li")
+      .forEach((navSection, index) => {
+        if (navSection.querySelector("ul"))
+          navSection.classList.add("nav-drop");
+        
+        const submenuItems = navSection.querySelector("ul");
+        const submenuWrapper = document.createElement("div");
+        submenuWrapper.className = "nav-submenu-wrapper";
+        submenuItems.parentNode.insertBefore(submenuWrapper, submenuItems);
+
+        const submenu = document.createElement("div");
+        submenu.className = "nav-submenu";
+        submenu.appendChild(categoryImages[index]);
+        submenu.appendChild(submenuItems);
+        
+        submenuWrapper.appendChild(submenu);
+
+        navSection.addEventListener("click", () => {
+          if (isDesktop.matches) {
+            const expanded =
+              navSection.getAttribute("aria-expanded") === "true";
+            toggleAllNavSections(navSections);
+            navSection.setAttribute(
+              "aria-expanded",
+              expanded ? "false" : "true"
+            );
+          }
+        });
       });
-    });
   }
 
   // hamburger for mobile
