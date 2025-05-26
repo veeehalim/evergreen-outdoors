@@ -145,7 +145,7 @@ header .nav-brand {
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 160px;
   height: auto;
 }
 
@@ -157,7 +157,7 @@ header nav .nav-sections {
   visibility: hidden;
 }
 
-header nav .nav-sections .default-content-wrapper > p {
+header nav .nav-sections .default-content-wrapper nav-submenu > p {
   display: none;
 }
 
@@ -283,5 +283,5 @@ header nav .nav-tools {
 
 header nav .nav-tools p {
   display: flex;
-  gap: 6px;
+  gap: 20px;
 }
