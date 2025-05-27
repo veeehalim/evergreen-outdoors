@@ -147,15 +147,36 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
-        "label": "Image",
+        "name": "productImage",
+        "label": "Product image",
         "multi": false
       },
       {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
+        "component": "text",
+        "valueType": "string",
+        "name": "productName",
+        "label": "Product name"
+      },
+      {
+        "component": "select",
+        "label": "Product tag",
+        "name": "productTag",
+        "valueType": "string",
+        "options": [
+          { "name": "New", "value": "new" },
+          { "name": "Trending", "value": "trending" }
+        ]
+      },
+      {
+        "component": "number",
+        "label": "Price",
+        "name": "price",
+        "valueType": "number"
+      },
+      {
+        "component": "text",
+        "label": "Color options",
+        "name": "colorOptions",
         "valueType": "string"
       }
     ]
