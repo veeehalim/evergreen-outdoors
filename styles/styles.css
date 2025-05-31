@@ -18,6 +18,13 @@
     --text-color: #131313;
     --link-color: #3b63fb;
     --link-hover-color: #1d3ecf;
+    --white-color: #fff;
+    --light-grey-color: #f8f8f8;
+    --dark-grey-color: #c9c9c4;
+    --black-color: #2b2d2f;
+    --green-color: #6b7b4d;
+    --dark-green-color: #2b3713;
+    --beige-color: #dcc7aa;
 
     /* fonts */
     --body-font-family: nunito, Arial, sans-serif;
