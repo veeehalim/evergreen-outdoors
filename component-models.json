@@ -243,7 +243,7 @@
         "component": "text",
         "valueType": "string",
         "name": "carousel_title",
-        "value": "",
+        "value": "Title",
         "label": "Title"
       },
       {
@@ -283,7 +283,7 @@
         "component": "richtext",
         "valueType": "string",
         "name": "carousel_description",
-        "value": "",
+        "value": "Description",
         "label": "Description"
       },
       {
