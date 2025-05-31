@@ -242,13 +242,6 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "carousel_brand",
-        "value": "",
-        "label": "Brand"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
         "name": "carousel_title",
         "value": "",
         "label": "Title"
