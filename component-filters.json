@@ -12,11 +12,9 @@
       "title",
       "hero",
       "cards",
-      "card",
       "columns",
       "fragment",
-      "carousel",
-      "carousel-item"
+      "carousel"
     ]
   },
   {
