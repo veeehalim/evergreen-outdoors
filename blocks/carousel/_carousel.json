@@ -45,7 +45,6 @@
         {
           "component": "select",
           "name": "carouselTitleType",
-          "value": "h1",
           "label": "Type",
           "valueType": "string",
           "options": [
@@ -86,28 +85,24 @@
           "component": "aem-content",
           "valueType": "string",
           "name": "carouselButton1",
-          "value": "",
           "label": "Button1 Link"
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "carouselButton1Text",
-          "value": "",
           "label": "Button1 Text"
         },
         {
           "component": "aem-content",
           "valueType": "string",
           "name": "carouselButton2",
-          "value": "",
           "label": "Button2 Link"
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "carouselButton2Text",
-          "value": "",
           "label": "Button2 Text"
         },
         {
