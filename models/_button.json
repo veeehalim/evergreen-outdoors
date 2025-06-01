@@ -40,18 +40,24 @@
           "label": "Type",
           "options": [
             {
-              "name": "default",
+              "name": "Primary",
               "value": ""
             },
             {
-              "name": "primary",
-              "value": "primary"
+              "name": "Secondary",
+              "value": "secondary"
             },
             {
-              "name": "secondary",
-              "value": "secondary"
+              "name": "Tertiary",
+              "value": "tertiary"
             }
           ]
+        },
+        {
+          "component": "reference",
+          "name": "linkIcon",
+          "label": "Icon",
+          "multi": false
         }
       ]
     }
