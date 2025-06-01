@@ -1,0 +1,5 @@
+.horizontal-rule {
+    border-top: 3px solid var(--dark-grey-color);
+    border-radius: 2em;
+    margin: 2em auto;
+}
