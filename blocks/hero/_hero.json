@@ -40,6 +40,23 @@
           "value": "",
           "label": "Text",
           "valueType": "string"
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "value": "",
+          "label": "Text Styling",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Light Text",
+              "value": "light"
+            },
+            {
+              "name": "Dark Text",
+              "value": "dark"
+            }
+          ]
         }
       ]
     }
