@@ -79,7 +79,12 @@ function createSlide(row, slideIndex, carouselId) {
 
   row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
     column.classList.add(`carousel-slide-${colIdx === 0 ? 'content' : 'image'}`);
-    slide.append(column);
+    if (colIdx === 0 || colIdx === 4) {
+      slide.append(column);
+    } else {
+      const firstSlideContent = slide.querySelector('.carousel-slide-content');
+      firstSlideContent.append(column);
+    }
   });
 
   const labeledBy = slide.querySelector('h1, h2, h3, h4, h5, h6');
