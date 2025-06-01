@@ -1,5 +1,7 @@
 .accordion details {
   border: 1px solid var(--dark-grey-color);
+  border-left: 0;
+  border-right: 0;
 }
 
 .accordion details + details {
@@ -19,15 +21,6 @@
   overflow: auto;
   transition: background-color 0.2s;
   font-weight: bold;
-}
-
-.accordion details[open] summary {
-  background-color: var(--beige-color);
-}
-
-.accordion details summary:focus,
-.accordion details summary:hover {
-  background-color: var(--beige-color);
 }
 
 .accordion details summary::-webkit-details-marker {
