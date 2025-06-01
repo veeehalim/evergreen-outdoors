@@ -1,3 +1,5 @@
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
 function updateActiveSlide(slide) {
   const block = slide.closest('.carousel');
   const slideIndex = parseInt(slide.dataset.slideIndex, 10);
@@ -73,6 +75,7 @@ function createSlide(row, slideIndex, carouselId) {
   slide.dataset.slideIndex = slideIndex;
   slide.setAttribute('id', `carousel-${carouselId}-slide-${slideIndex}`);
   slide.classList.add('carousel-slide');
+  moveInstrumentation(row, slide);
 
   row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
     column.classList.add(`carousel-slide-${colIdx === 0 ? 'content' : 'image'}`);
