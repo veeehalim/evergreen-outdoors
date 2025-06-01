@@ -1,9 +1,3 @@
-/*
- * Accordion Block
- * Recreate an accordion
- * https://www.hlx.live/developer/block-collection/accordion
- */
-
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
