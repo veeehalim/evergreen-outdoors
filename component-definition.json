@@ -188,7 +188,7 @@
           }
         },
         {
-          "title": "Accordion - update me",
+          "title": "Accordion",
           "id": "accordion",
           "plugins": {
             "xwalk": {
