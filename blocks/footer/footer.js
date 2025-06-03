@@ -46,7 +46,5 @@ export default async function decorate(block) {
     footerLinksWrapper.append(link);
   })
 
-  console.log(links);
-
   block.append(footer);
 }
