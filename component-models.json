@@ -104,18 +104,24 @@
         "label": "Type",
         "options": [
           {
-            "name": "default",
+            "name": "Primary",
             "value": ""
           },
           {
-            "name": "primary",
-            "value": "primary"
+            "name": "Secondary",
+            "value": "secondary"
           },
           {
-            "name": "secondary",
-            "value": "secondary"
+            "name": "Tertiary",
+            "value": "tertiary"
           }
         ]
+      },
+      {
+        "component": "reference",
+        "name": "linkIcon",
+        "label": "Icon",
+        "multi": false
       }
     ]
   },
@@ -197,6 +203,23 @@
         "name": "rows",
         "value": "",
         "label": "Rows"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "2-Column Layout",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "50% / 50% (Default)",
+            "value": ""
+          },
+          {
+            "name": "30% / 70%",
+            "value": "two-columns-uneven"
+          }
+        ]
       }
     ]
   },
@@ -233,6 +256,23 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Text Styling",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Light Text",
+            "value": "light"
+          },
+          {
+            "name": "Dark Text",
+            "value": "dark"
+          }
+        ]
       }
     ]
   },
@@ -320,6 +360,23 @@
         "name": "fileReference",
         "label": "Image",
         "multi": false
+      }
+    ]
+  },
+  {
+    "id": "accordion-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   }
