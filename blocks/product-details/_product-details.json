@@ -47,12 +47,11 @@
         {
           "component": "select",
           "name": "classes",
-          "value": "",
           "label": "Type",
           "valueType": "string",
           "options": [
             {
-              "name": "Default",
+              "name": "Test",
               "value": ""
             },
             {
