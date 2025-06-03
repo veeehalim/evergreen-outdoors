@@ -16,7 +16,8 @@
       "fragment",
       "carousel",
       "accordion",
-      "horizontal-rule"
+      "horizontal-rule",
+      "product-details"
     ]
   },
   {
@@ -29,7 +30,7 @@
   },
   {
     "id": "column",
-    "components": ["text", "image", "button", "title"]
+    "components": ["text", "image", "button", "title", "product-details"]
   },
   {
     "id": "carousel",

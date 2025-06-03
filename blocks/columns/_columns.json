@@ -70,7 +70,8 @@
         "title",
         "cards",
         "accordion",
-        "horizontal-rule"
+        "horizontal-rule",
+        "product-details"
       ]
     }
   ]
