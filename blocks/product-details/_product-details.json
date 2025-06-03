@@ -43,6 +43,19 @@
           "valueType": "string",
           "name": "attributes",
           "label": "Product attributes"
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "value": "product",
+          "label": "Type",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Product",
+              "value": "product"
+            }
+          ]
         }
       ]
     }
