@@ -203,6 +203,23 @@
         "name": "rows",
         "value": "",
         "label": "Rows"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "2-Column Layout",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "50% / 50% (Default)",
+            "value": ""
+          },
+          {
+            "name": "30% / 70%",
+            "value": "two-columns-uneven"
+          }
+        ]
       }
     ]
   },

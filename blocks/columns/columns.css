@@ -30,4 +30,8 @@
     flex: 1;
     order: unset;
   }
+
+  .columns.two-columns-uneven > div > div:nth-child(2) {
+    flex: 2;
+  }
 }
