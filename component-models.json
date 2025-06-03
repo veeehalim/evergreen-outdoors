@@ -410,10 +410,13 @@
       {
         "component": "select",
         "name": "classes",
-        "value": "product",
         "label": "Type",
         "valueType": "string",
         "options": [
+          {
+            "name": "Test",
+            "value": ""
+          },
           {
             "name": "Product",
             "value": "product"
