@@ -1,3 +1,15 @@
+main > .section > .carousel-wrapper {
+  position: relative;
+  max-width: none;
+  padding: 0;
+}
+
+.carousel nav {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
 .carousel .carousel-slides-container {
   position: relative;
 }
@@ -56,7 +68,6 @@
   margin: 68px;
   padding: 16px;
   color: white;
-  background-color: rgb(19 19 19 / 75%);
   position: relative;
   width: var(--slide-content-width, auto);
 }
@@ -67,24 +78,23 @@
   justify-content: center;
   gap: 6px 12px;
   padding: 12px;
-  background-color: var(--light-color);
   line-height: 0;
 }
 
 .carousel .carousel-slide-indicator button {
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
   margin: 0;
   padding: 0;
   border-radius: 50%;
-  background-color: #dadada;
+  background-color: rgba(201, 201, 196, 50%);
   transition: background-color 0.2s;
 }
 
 .carousel .carousel-slide-indicator button:disabled,
 .carousel .carousel-slide-indicator button:hover,
 .carousel .carousel-slide-indicator button:focus-visible {
-  background-color: var(--text-color);
+  background-color: #dadada;
 }
 
 .carousel .carousel-navigation-buttons {
@@ -135,6 +145,11 @@
   left: calc(50% - 2px);
 }
 
+.carousel .button-container a:hover {
+  background-color: transparent;
+  border: 2px solid var(--white-color);
+}
+
 @media (width >= 600px) {
   .carousel .carousel-navigation-buttons {
     left: 24px;
@@ -149,5 +164,9 @@
 
   .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
     --slide-content-width: auto;
+  }
+
+  .carousel .carousel-slide-content p:first-child {
+    font-size: 22px;
   }
 }
