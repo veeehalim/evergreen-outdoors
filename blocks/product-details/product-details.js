@@ -27,6 +27,13 @@ export default function decorate(block) {
     node.replaceWith(...node.childNodes);
   });
 
+  // Add product information container next to image container
+  if (productDetails == null) {
+    block.append(productInfoWrapper);
+  } else {
+    productDetails.replaceWith(productInfoWrapper);
+  }
+
   // Add classes and update innerHTML for key product information items
   const productTitle = document.querySelector('.product-attributes > div:first-child');
   productTitle.innerHTML = '<h1>' + productTitle.children[0].innerHTML + '</h1>';
@@ -35,13 +42,6 @@ export default function decorate(block) {
   const productPrice = document.querySelector('.product-attributes > div:nth-child(3)');
   productPrice.innerHTML = '<p>$' + productPrice.textContent + '</p>';
   productPrice.classList.add('product-price');
-
-  // Add product information container next to image container
-  if (productDetails == null) {
-    block.append(productInfoWrapper);
-  } else {
-    productDetails.replaceWith(productInfoWrapper);
-  }
 
   console.log("Product details JS has loaded");
 }
