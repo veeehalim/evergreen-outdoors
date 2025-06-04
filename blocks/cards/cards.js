@@ -1,24 +1,42 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+import { createOptimizedPicture } from "../../scripts/aem.js";
+import { moveInstrumentation } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
+  const bodyClassNames = [
+    "cards-card-title",
+    "cards-card-tag",
+    "cards-card-price",
+  ];
   /* change to ul, li */
-  const ul = document.createElement('ul');
+  const ul = document.createElement("ul");
   [...block.children].forEach((row) => {
-    const li = document.createElement('li');
+    const li = document.createElement("li");
     moveInstrumentation(row, li);
     while (row.firstElementChild) li.append(row.firstElementChild);
-    [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
-      else div.className = 'cards-card-body';
+    [...li.children].forEach((div, index) => {
+      if (div.children.length === 1 && div.querySelector("picture"))
+        div.className = "cards-card-image";
+      else if (div.children.length > 0) {
+        div.className = `cards-card-body ${bodyClassNames[index - 1]}`;
+      }
     });
     ul.append(li);
   });
-  ul.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    moveInstrumentation(img, optimizedPic.querySelector('img'));
-    img.closest('picture').replaceWith(optimizedPic);
+
+  // Price styling
+  document.querySelectorAll(".cards-card-price p").forEach((p) => {
+    if (!p.textContent.startsWith("$")) {
+      p.textContent = `$${p.textContent}.00`;
+    }
   });
-  block.textContent = '';
+
+  ul.querySelectorAll("picture > img").forEach((img) => {
+    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [
+      { width: "750" },
+    ]);
+    moveInstrumentation(img, optimizedPic.querySelector("img"));
+    img.closest("picture").replaceWith(optimizedPic);
+  });
+  block.textContent = "";
   block.append(ul);
 }

@@ -178,12 +178,6 @@
         "label": "Price",
         "name": "price",
         "valueType": "number"
-      },
-      {
-        "component": "text",
-        "label": "Color options",
-        "name": "colorOptions",
-        "valueType": "string"
       }
     ]
   },
