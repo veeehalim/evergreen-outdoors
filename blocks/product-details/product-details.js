@@ -10,7 +10,7 @@ export default function decorate(block) {
   // Set up product information container
   const productInfoWrapper = document.createElement('div');
   productInfoWrapper.classList.add('product-attributes');
-  const productInfo = document.querySelectorAll('.product-details > div:nth-child(n+2)');
+  const productInfo = document.querySelectorAll('.product-details > div:not(.product-image, .product-attributes, :first-child)');
   console.log("Product info wrapper before elements appended: ");
   console.log(productInfo);
   productInfo.forEach((element) => {
