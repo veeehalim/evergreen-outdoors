@@ -1,3 +1,5 @@
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
 export default function decorate(block) {
   const productDetails = document.querySelector('.product-details > .product-attributes');
   console.log("Product details:");
@@ -41,6 +43,7 @@ export default function decorate(block) {
     block.append(productInfoWrapper);
     console.log("product details is null");
   } else {
+    moveInstrumentation(productDetails, productInfoWrapper);
     productDetails.replaceWith(productInfoWrapper);
     console.log("product details is not null");
   }
