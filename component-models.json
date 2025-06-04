@@ -379,21 +379,5 @@
         "valueType": "string"
       }
     ]
-  },
-  {
-    "id": "image-list",
-    "fields": [
-      {
-        "component": "reference",
-        "name": "image",
-        "label": "Image",
-        "multi": true
-      },
-      {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Alt Text"
-      }
-    ]
   }
 ]

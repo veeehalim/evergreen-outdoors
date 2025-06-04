@@ -231,18 +231,6 @@
               }
             }
           }
-        },
-        {
-          "title": "Image List",
-          "id": "image-list",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/image/v1/image",
-                "template": {}
-              }
-            }
-          }
         }
       ]
     }
