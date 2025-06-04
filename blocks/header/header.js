@@ -131,7 +131,7 @@ export default async function decorate(block) {
     brandLink.className = "";
     brandLink.closest(".button-container").className = "";
     brandLink.textContent = "";
-    brandLink.innerHTML = `<img src="icons/logo.svg" alt="Logo" />`;
+    brandLink.innerHTML = `<img src="/icons/logo.svg" alt="Logo" />`;
   }
 
   const navSections = nav.querySelector('.nav-sections');
