@@ -8,8 +8,11 @@
 }
 
 .cards > ul > li {
-    border: 1px solid #dadada;
-    background-color: var(--background-color);
+    border: 1.25px solid var(--black-color);
+    border-radius: 0.5rem;
+    background-color: var(--white-color);
+    overflow: hidden;
+    position: relative;
 }
 
 .cards .cards-card-body {
@@ -18,14 +21,40 @@
 
 .cards .cards-card-image {
     line-height: 0;
+    object-fit: cover;
+
+    aspect-ratio: 16/9;
+}
+
+.cards .cards-card-tag {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    margin: 0;
+    padding: 4px 10px;
+
+    background-color: var(--green-color);
+    color: var(--white-color);
+    border-radius: 0.25rem;
+}
+
+.cards .cards-card-tag p {
+    margin: 0;
+    font-size: var(--body-font-size-xs);
+    text-transform: capitalize;
+}
+
+.cards .cards-card-title p {
+    font-size: var(--heading-font-size-s);
+    font-weight: bold;
+}
+
+.cards .cards-card-price p {
+    font-size: var(--body-font-size-m);
 }
 
 .cards > ul > li img {
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-}
-
-.cards * {
-    font-weight: 600;
 }
