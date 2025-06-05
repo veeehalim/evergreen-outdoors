@@ -43,6 +43,6 @@ export default function decorate(block) {
   productTitle.classList.add('product-title');
 
   const productPrice = document.querySelector('.product-attributes > div:nth-child(3)');
-  productPrice.innerHTML = '<p>$' + productPrice.textContent + '</p>';
+  productPrice.innerHTML = '<p>$<span>' + productPrice.textContent + '</span></p>';
   productPrice.classList.add('product-price');
 }
