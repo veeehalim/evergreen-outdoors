@@ -16,7 +16,10 @@
       "cards",
       "columns",
       "fragment",
-      "accordion"
+      "carousel",
+      "accordion",
+      "horizontal-rule",
+      "product-details"
     ]
   },
   {

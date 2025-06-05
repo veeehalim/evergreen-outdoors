@@ -373,5 +373,40 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "product-details",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Product image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Product title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "reviews-summary",
+        "label": "Product reviews summary"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "price",
+        "label": "Product price"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "attributes",
+        "label": "Product attributes"
+      }
+    ]
   }
 ]

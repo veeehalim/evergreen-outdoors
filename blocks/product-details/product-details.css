@@ -1,0 +1,23 @@
+.product-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-attributes a.cart-button {
+    margin-right: 1em;
+}
+
+@media (width >= 900px) {
+  .product-details {
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .product-details .product-image {
+      flex: 1;
+  }
+
+  .product-details .product-attributes {
+      flex: 2;
+  }
+}
