@@ -297,18 +297,19 @@ header nav .nav-tools p {
   margin-top: 10px;
   padding: 10px 10px 8px;
   border: 1px solid grey;
-  border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: white;
 }
 
 .cart-popup button {
   margin-top: 20px;
+  font-size: 18px;
 }
 
 header nav .nav-tools .cart-popup p {
   display: block;
   padding: 5px 0;
+  font-size: 16px;
 }
 
 .cart-summary {

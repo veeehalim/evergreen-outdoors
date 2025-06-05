@@ -230,7 +230,7 @@ export function getCartItems() {
   return cart ? JSON.parse(cart) : [];
 }
 
-function updateCartDetails() {
+export function updateCartDetails() {
   const cartModal = document.querySelector('.cart-popup');
 
   let cart = getCartItems();

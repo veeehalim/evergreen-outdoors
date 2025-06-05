@@ -1,5 +1,5 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
-import { getCartItems } from '../header/header.js';
+import { getCartItems, updateCartDetails } from '../header/header.js';
 
 export default function decorate(block) {
   const productDetails = document.querySelector('.product-details > .product-attributes');
