@@ -279,9 +279,56 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  position: relative;
 }
 
 header nav .nav-tools p {
   display: flex;
   gap: 20px;
+}
+
+.cart-popup {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  min-width: 300px;
+  max-height: 300px;
+  overflow: auto;
+  margin-top: 10px;
+  padding: 10px 10px 8px;
+  border: 1px solid grey;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+}
+
+.cart-popup button {
+  margin-top: 20px;
+}
+
+header nav .nav-tools .cart-popup p {
+  display: block;
+  padding: 5px 0;
+}
+
+.cart-summary {
+  padding: 20px 20px 10px;
+}
+
+.product-item {
+  display: flex;
+  gap: 24px;
+  padding: 10px 0;
+}
+
+.product-item p:first-child {
+  font-weight: bold;
+}
+
+.product-item p:not(:first-child) {
+  font-size: 14px;
+}
+
+.no-items:not(.d-none) {
+  padding: 10px 30px;
 }
