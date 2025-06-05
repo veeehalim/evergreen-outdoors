@@ -7,6 +7,15 @@
     margin-right: 1em;
 }
 
+.product-details .product-title h1 {
+    margin-top: 0;
+}
+
+.product-details .product-price {
+    font-weight: bold;
+    font-size: var(--heading-font-size-l);
+}
+
 @media (width >= 900px) {
   .product-details {
     flex-direction: unset;
