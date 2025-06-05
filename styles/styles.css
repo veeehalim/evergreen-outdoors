@@ -282,3 +282,7 @@ main .section.highlight {
     margin: 0;
     padding: 40px 0;
 }
+
+.d-none {
+    display: none;
+}
