@@ -225,65 +225,9 @@ function toggleCartModal() {
   });
 }
 
-// Add item to cart when CTA button is clicked
-let addToCartBtn = document.querySelector('.product-details .cart-button');
-
-addToCartBtn.addEventListener('click', () => {
-  addItemToCart();
-});
-
-function getCartItems() {
+export function getCartItems() {
   let cart = localStorage.getItem('cart');
   return cart ? JSON.parse(cart) : [];
-}
-
-function addItemToCart() {
-  // Find product details and place in variables
-  //const itemImage = document.querySelector('.product-image img');
-  const itemTitle = document.querySelector('.product-title h1').textContent;
-  const itemPrice = parseInt(document.querySelector('.product-price span').textContent);
-
-  // get existing cart items from local storage
-  let cart = getCartItems();
-
-  let isAlreadyInCart = false;
-  let index = 0;
-  // check if item selected is already in the cart
-  // if so, capture index where this item sits
-  while (cart.length != 0 && isAlreadyInCart === false && index < cart.length) {
-    for (let i = 0; i < cart.length; i++) {
-       isAlreadyInCart = (cart[i].title === itemTitle);
-       index++;
-    }
-  }
-
-  // if item is already in the cart, increment qty by 1
-  // otherwise, add a new cart item
-  if (isAlreadyInCart) {
-    cart[index - 1].qty++;
-  } else {
-    let cartItem = {
-      title: itemTitle,
-      price: itemPrice,
-      qty: 1
-    };
-    cart.push(cartItem);
-  }
-
-  // update local storage with new cart values
-  localStorage.setItem('cart', JSON.stringify(cart));
-
-  // update total item count
-  let totalItems = localStorage.getItem('totalItems');
-  totalItems = (totalItems != null) ? parseInt(totalItems) : 0;
-  localStorage.setItem('totalItems', (totalItems + 1));
-
-  // update total price
-  let totalPrice = localStorage.getItem('totalPrice');
-  totalPrice = (totalPrice != null) ? parseInt(totalPrice) : 0;
-  localStorage.setItem('totalPrice', (totalPrice + itemPrice));
-
-  updateCartDetails();
 }
 
 function updateCartDetails() {
@@ -334,7 +278,8 @@ function populateCartProducts(cart) {
     column1.append(productQtyEl);
 
     let productPriceEl = document.createElement('p');
-    productPriceEl.textContent = "$" + productPrice;
+    let totalProductPrice = productPrice * productQty;
+    productPriceEl.textContent = "$" + totalProductPrice.toString();
 
     column2.append(productPriceEl);
 
