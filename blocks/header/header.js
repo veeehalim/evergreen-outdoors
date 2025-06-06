@@ -204,7 +204,7 @@ function toggleCartModal() {
   const cartModal = document.createElement('div');
   cartModal.classList.add('cart-popup', 'd-none');
   cartModal.innerHTML = `<div class='cart-summary'>
-                            <p><span class='total-items'>0</span> items in bag</p>
+                            <p><span class='total-items'>0</span> item(s) in bag</p>
                             <p>Bag subtotal: $<span class='total-price'>0</span></p>
                             <button>Proceed to checkout</button>
                             <hr>
@@ -229,12 +229,13 @@ function toggleCartModal() {
     cartModal.classList.add('d-none');
   });
 
-  removeItemBtnListener();
-}
+  let cartSummaryIcon = document.createElement('span');
+  cartSummaryIcon.classList.add('icon-cart-summary');
+  cartSummaryIcon.textContent = "0";
+  document.querySelector('.nav-tools .default-content-wrapper > p').append(cartSummaryIcon);
+  console.log(cartSummaryIcon);
 
-export function getCartItems() {
-  let cart = localStorage.getItem('cart');
-  return cart ? JSON.parse(cart) : [];
+  removeItemBtnListener();
 }
 
 function removeItemBtnListener() {
@@ -245,6 +246,11 @@ function removeItemBtnListener() {
         removeItemFromCart(btn);
       });
   });
+}
+
+export function getCartItems() {
+  let cart = localStorage.getItem('cart');
+  return cart ? JSON.parse(cart) : [];
 }
 
 function getTotalItems() {
@@ -278,6 +284,9 @@ export function updateCartDetails() {
 
   let totalPricePlaceholder = document.querySelector('.total-price');
   totalPricePlaceholder.textContent = totalPrice;
+
+  let cartSummaryIcon = document.querySelector('.icon-cart-summary');
+  cartSummaryIcon.textContent = totalItems;
 
   removeItemBtnListener();
 }
@@ -340,4 +349,9 @@ function removeItemFromCart(btn) {
   localStorage.setItem('cart', JSON.stringify(cart));
 
   updateCartDetails();
+}
+
+function updateCartSummaryIcon() {
+  let cart = getCartItems();
+
 }

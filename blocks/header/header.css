@@ -335,7 +335,22 @@ header nav .product-item p:not(:first-child) {
 }
 
 .cart-summary button.tertiary {
-    font-size: 14px;
-    text-decoration: underline;
-    margin: 0;
+  font-size: 14px;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.icon-cart-summary {
+  position: absolute;
+  right: -9px;
+  top: -5px;
+  width: 11px;
+  height: 11px;
+  padding: 4px 4px 3px;
+  background-color: var(--green-color);
+  border-radius: 15px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
 }
