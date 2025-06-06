@@ -178,6 +178,11 @@
         "label": "Price",
         "name": "price",
         "valueType": "number"
+      },
+      {
+        "component": "aem-content",
+        "name": "cardLink",
+        "label": "cardLink"
       }
     ]
   },
