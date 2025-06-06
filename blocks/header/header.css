@@ -301,7 +301,7 @@ header nav .nav-tools p {
   background-color: white;
 }
 
-.cart-popup button {
+.cart-summary > button {
   margin-top: 20px;
   font-size: 18px;
 }
@@ -326,10 +326,16 @@ header nav .nav-tools .cart-popup p {
   font-weight: bold;
 }
 
-.product-item p:not(:first-child) {
+header nav .product-item p:not(:first-child) {
   font-size: 14px;
 }
 
 .no-items:not(.d-none) {
   padding: 10px 30px;
+}
+
+.cart-summary button.tertiary {
+    font-size: 14px;
+    text-decoration: underline;
+    margin: 0;
 }

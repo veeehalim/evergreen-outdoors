@@ -223,6 +223,8 @@ function toggleCartModal() {
       cartModal.classList.add('d-none');
     }
   });
+
+  removeItemBtnListener();
 }
 
 export function getCartItems() {
@@ -230,12 +232,30 @@ export function getCartItems() {
   return cart ? JSON.parse(cart) : [];
 }
 
+function removeItemBtnListener() {
+  let removeItemBtns = document.querySelectorAll('.cart-summary .remove-item');
+
+  removeItemBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        removeItemFromCart(btn);
+      });
+  });
+}
+
+function getTotalItems() {
+  return localStorage.getItem('totalItems');
+}
+
+function getTotalPrice() {
+  return localStorage.getItem('totalPrice');
+}
+
 export function updateCartDetails() {
   const cartModal = document.querySelector('.cart-popup');
 
   let cart = getCartItems();
-  let totalItems = localStorage.getItem('totalItems');
-  let totalPrice = localStorage.getItem('totalPrice');
+  let totalItems = getTotalItems();
+  let totalPrice = getTotalPrice();
 
   let cartSummaryContainer = document.querySelector('.cart-popup .cart-summary');
   let noItemsContainer = document.querySelector('.no-items');
@@ -253,6 +273,8 @@ export function updateCartDetails() {
 
   let totalPricePlaceholder = document.querySelector('.total-price');
   totalPricePlaceholder.textContent = totalPrice;
+
+  removeItemBtnListener();
 }
 
 function populateCartProducts(cart) {
@@ -266,6 +288,7 @@ function populateCartProducts(cart) {
 
     let productItemContainer = document.createElement('div');
     productItemContainer.classList.add('product-item');
+    productItemContainer.setAttribute('data-id', i);
     let column1 = document.createElement('div');
     let column2 = document.createElement('div');
 
@@ -273,9 +296,13 @@ function populateCartProducts(cart) {
     productTitleEl.textContent = productTitle;
     let productQtyEl = document.createElement('p');
     productQtyEl.textContent = "Quantity: " + productQty;
+    let removeItemBtn = document.createElement('button');
+    removeItemBtn.classList.add('remove-item', 'tertiary');
+    removeItemBtn.textContent = "Remove item";
 
     column1.append(productTitleEl);
     column1.append(productQtyEl);
+    column1.append(removeItemBtn);
 
     let productPriceEl = document.createElement('p');
     let totalProductPrice = productPrice * productQty;
@@ -288,4 +315,24 @@ function populateCartProducts(cart) {
 
     cartProductsContainer.append(productItemContainer);
   }
+}
+
+function removeItemFromCart(btn) {
+  let item = btn.parentElement.parentElement;
+  let itemId = item.getAttribute("data-id");
+
+  let cart = getCartItems();
+  let itemQty = cart[itemId].qty;
+  let itemTotalPrice = cart[itemId].price * itemQty;
+  cart.splice(itemId, 1);
+
+  let totalItems = parseInt(getTotalItems());
+  localStorage.setItem('totalItems', (totalItems - itemQty));
+
+  let totalPrice = parseInt(getTotalPrice());
+  localStorage.setItem('totalPrice', (totalPrice - itemTotalPrice));
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  updateCartDetails();
 }
