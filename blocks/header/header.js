@@ -224,6 +224,11 @@ function toggleCartModal() {
     }
   });
 
+  let noItemsCTA = document.querySelector('.no-items button');
+  noItemsCTA.addEventListener('click', () => {
+    cartModal.classList.add('d-none');
+  });
+
   removeItemBtnListener();
 }
 
