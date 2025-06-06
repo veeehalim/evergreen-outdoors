@@ -180,9 +180,9 @@
         "valueType": "number"
       },
       {
-        "component": "aem-content",
+        "component": "text",
         "name": "cardLink",
-        "label": "cardLink"
+        "label": "Card URL"
       }
     ]
   },
